@@ -1,0 +1,36 @@
+// Get the form and result elements
+const form = document.getElementById("bmi-form");
+const resultDiv = document.getElementById("result");
+const bmiValue = document.getElementById("bmi-value");
+const bmiCategory = document.getElementById("bmi-category");
+
+// Event listener for form submission
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get the values of weight and height
+    const weight = parseFloat(document.getElementById("weight").value);
+    const height = parseFloat(document.getElementById("height").value) / 100; // Convert height to meters
+
+    // Calculate BMI
+    if (weight > 0 && height > 0) {
+        const bmi = weight / (height * height);
+        bmiValue.textContent = bmi.toFixed(2);
+
+        // Determine BMI category
+        if (bmi < 18.5) {
+            bmiCategory.textContent = "Underweight";
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+            bmiCategory.textContent = "Normal weight";
+        } else if (bmi >= 25 && bmi < 29.9) {
+            bmiCategory.textContent = "Overweight";
+        } else {
+            bmiCategory.textContent = "Obesity";
+        }
+
+        // Show result
+        resultDiv.style.display = "block";
+    } else {
+        alert("Please enter valid values for weight and height.");
+    }
+});
