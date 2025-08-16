@@ -1,0 +1,28 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* Vibrant Blue Gradient */
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Calculator container */
+.calculator {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 300px;
+    text-align: center;
+}
+
+/* Main Heading */
+h1 {
+    font-size: 2em;            /* Larger font size */
+    font-weight: 700;          /* Bold font weight */
+    color: white;             /* White text color */
+    text-align: center;       /* Center the text */
+}

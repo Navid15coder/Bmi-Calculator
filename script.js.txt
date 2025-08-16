@@ -1,0 +1,28 @@
+function calculateBMI() {
+    var weight = document.getElementById('weight').value;
+    var height = document.getElementById('height').value;
+
+    // Check if inputs are provided
+    if (weight && height) {
+        // Convert height from cm to meters
+        var heightInMeters = height / 100;
+        
+        // Calculate BMI using the formula
+        var bmi = weight / (heightInMeters * heightInMeters);
+
+        // Display BMI result
+        document.getElementById('bmi-result').innerText = bmi.toFixed(2);
+
+        // Categorize BMI
+        var status = '';
+        if (bmi < 18.5) {
+            status = 'Underweight';
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+            status = 'Normal weight';
+        } else if (bmi >= 25 && bmi <= 29.9) {
+            status = 'Overweight';
+        } else {
+            status = 'Obese';
+        }
+
+        // Display BMI status
